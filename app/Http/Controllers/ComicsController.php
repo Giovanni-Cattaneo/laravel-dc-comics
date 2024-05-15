@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ComicsModel;
+use App\Models\Comics;
 use Illuminate\Http\Request;
 
-class ComicsModelController extends Controller
+class ComicsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //return view('comics.index', ['comicsModel' => ComicsModel::orderByDesc('id')->paginate(8)]);
+        return view('comics.index', ['comics' => Comics::orderByDesc('id')->paginate(8)]);
     }
 
     /**
@@ -34,15 +34,15 @@ class ComicsModelController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(ComicsModel $comicsModel)
+    public function show(Comics $comics)
     {
-        //return view('comics.show', compact('comicsModel'));
+        return view('comics.show', compact('comics'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(ComicsModel $comicsModel)
+    public function edit(Comics $comics)
     {
         //
     }
@@ -50,7 +50,7 @@ class ComicsModelController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, ComicsModel $comicsModel)
+    public function update(Request $request, Comics $comics)
     {
         //
     }
@@ -58,7 +58,7 @@ class ComicsModelController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ComicsModel $comicsModel)
+    public function destroy(Comics $comics)
     {
         //
     }

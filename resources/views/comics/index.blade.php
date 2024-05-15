@@ -16,14 +16,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($comicsModel as $comic)
+                    @foreach ($comics as $comic)
                         <tr class="">
                             <td scope="row"><img src="{{ $comic->thumb }}" alt="" width="100"></td>
                             <td>{{ $comic->title }}</td>
                             <td>{{ $comic->series }}</td>
                             <td>{{ $comic->price }}</td>
                             <td>{{ $comic->sale_date }}</td>
-                            <td><a href="{{ route('comicsModel.show', ['comicsModel' => $comic]) }}">Show</a> / Edit /
+                            <td><a href="{{ route('comics.show', ['comic' => $comic]) }}">Show</a> / Edit /
                                 Delete
                             </td>
                         </tr>
