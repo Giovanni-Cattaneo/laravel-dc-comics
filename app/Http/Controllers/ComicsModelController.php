@@ -12,6 +12,8 @@ class ComicsModelController extends Controller
      */
     public function index()
     {
+        $comics = config('comics');
+        @dd($comics);
         return view('comics.index');
     }
 
