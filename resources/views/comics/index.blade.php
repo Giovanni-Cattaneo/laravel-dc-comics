@@ -23,7 +23,7 @@
                             <td>{{ $comic->series }}</td>
                             <td>{{ $comic->price }}</td>
                             <td>{{ $comic->sale_date }}</td>
-                            <td><a href="{{ route('comics.show', ['comic' => $comic]) }}">Show</a> / Edit /
+                            <td><a href="{{ route('comicsModel.show', ['comicsModel' => $comic]) }}">Show</a> / Edit /
                                 Delete
                             </td>
                         </tr>
