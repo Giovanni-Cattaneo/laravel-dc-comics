@@ -12,8 +12,7 @@ class ComicsModelController extends Controller
      */
     public function index()
     {
-        $comics = config('comics');
-        return view('comics.index', compact('comics'));
+        return view('comics.index', ['comics' => ComicsModel::orderByDesc('id')->paginate(8)]);
     }
 
     /**
@@ -35,9 +34,8 @@ class ComicsModelController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(ComicsModel $comicsModel)
+    public function show(ComicsModel $comics)
     {
-        $comics = config('comics');
         return view('comics.show', compact('comics'));
     }
 
