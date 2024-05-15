@@ -22,6 +22,7 @@
                             <td>{{ $comic['series'] }}</td>
                             <td>{{ $comic['price'] }}</td>
                             <td>{{ $comic['sale_date'] }}</td>
+                            <td><a href="{{ route('comics.show', $comic['title']) }}">Show</a> / Edit / Delete</td>
                         </tr>
                     @endforeach
 

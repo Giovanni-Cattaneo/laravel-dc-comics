@@ -37,7 +37,8 @@ class ComicsModelController extends Controller
      */
     public function show(ComicsModel $comicsModel)
     {
-        //
+        $comics = config('comics');
+        return view('comics.show', compact('comics'));
     }
 
     /**
