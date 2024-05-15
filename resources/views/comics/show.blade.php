@@ -8,7 +8,7 @@
                     <img class="card-img-top" src="{{ $comicsModel->thumb }}" alt="Title" />
                     <div class="card-body">
                         <h4 class="card-title">{{ $comicsModel->title }}</h4>
-                        <p class="card-text">Body</p>
+                        <p class="card-text">{{ $comicsModel->description }}</p>
                     </div>
                 </div>
 
