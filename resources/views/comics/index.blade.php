@@ -15,7 +15,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($comics as $comic)
+                    @foreach ($comics as $index => $comic)
                         <tr class="">
                             <td scope="row"><img src="{{ $comic['thumb'] }}" alt="" width="100"></td>
                             <td>{{ $comic['title'] }}</td>
