@@ -5,10 +5,10 @@
         <div class="row">
             <div class="col">
                 <div class="card text-start">
-                    <img class="card-img-top" src="{{ $comics->thumb }}" alt="Title" />
+                    <img class="card-img-top" src="{{ $comic->thumb }}" alt="Title" />
                     <div class="card-body">
-                        <h4 class="card-title">{{ $comics->title }}</h4>
-                        <p class="card-text">{{ $comics->description }}</p>
+                        <h4 class="card-title">{{ $comic->title }}</h4>
+                        <p class="card-text">{{ $comic->description }}</p>
                     </div>
                 </div>
 
