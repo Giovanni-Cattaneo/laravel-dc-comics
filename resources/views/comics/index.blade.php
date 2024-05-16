@@ -27,8 +27,9 @@
                             <td>{{ $comic->series }}</td>
                             <td>{{ $comic->price }}</td>
                             <td>{{ $comic->sale_date }}</td>
-                            <td><a href="{{ route('comics.show', ['comic' => $comic]) }}">Show</a> / Edit /
-                                Delete
+                            <td><a href="{{ route('comics.show', ['comic' => $comic]) }}">Show</a> / <a
+                                    href="{{ route('comics.edit', $comic) }}">Edit</a> /
+                                <a href="">Delete</a>
                             </td>
                         </tr>
                     @endforeach

@@ -53,9 +53,9 @@ class ComicsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Comics $comics)
+    public function edit(Comics $comic)
     {
-        //
+        return view('comics.edit', compact('comic'));
     }
 
     /**
