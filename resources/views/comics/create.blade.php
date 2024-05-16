@@ -1,6 +1,7 @@
 @extends('layout.app')
 
 @section('main-content')
+    @include('partials.validation-errors')
     <div class="container mt-5">
         <form action="{{ route('comics.store') }}" method="post">
             @csrf

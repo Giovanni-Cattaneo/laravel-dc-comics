@@ -30,6 +30,17 @@ class ComicsController extends Controller
     {
         $product = $request->all();
 
+        $val_data = $request->validate([
+            'title' => 'required|min:3|max:255|',
+            'thumb' => 'required|max:255',
+            'series' => 'required|min:10|max:200',
+            'price' => 'nullable|max:15',
+            'sale_date' => 'nullable|max:25',
+            'description' => 'nullable'
+        ]);
+
+        @dd($val_data);
+
         // $comic = new Comics();
         // $comic->title = $product['title'];
         // $comic->thumb = $product['thumb'];
