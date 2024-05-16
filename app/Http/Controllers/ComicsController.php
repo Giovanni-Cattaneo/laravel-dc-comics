@@ -39,8 +39,6 @@ class ComicsController extends Controller
             'description' => 'nullable'
         ]);
 
-        @dd($val_data);
-
         // $comic = new Comics();
         // $comic->title = $product['title'];
         // $comic->thumb = $product['thumb'];
@@ -50,7 +48,7 @@ class ComicsController extends Controller
         // $comic->description = $product['description'];
         // $comic->save();
 
-        Comics::create($product);
+        Comics::create($val_data);
 
         return to_route('comics.index');
     }
@@ -66,8 +64,20 @@ class ComicsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Comics $comic)
+    public function edit(Request $request, Comics $comic)
     {
+        $val_data = $request->validate([
+            'title' => 'required|min:3|max:255|',
+            'thumb' => 'required|max:255',
+            'series' => 'required|min:10|max:200',
+            'price' => 'nullable|max:15',
+            'sale_date' => 'nullable|max:25',
+            'description' => 'nullable'
+        ]);
+
+        $comic->update($val_data);
+
+
         return view('comics.edit', compact('comic'));
     }
 
