@@ -64,20 +64,8 @@ class ComicsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Request $request, Comics $comic)
+    public function edit(Comics $comic)
     {
-        $val_data = $request->validate([
-            'title' => 'required|min:3|max:255|',
-            'thumb' => 'required|max:255',
-            'series' => 'required|min:10|max:200',
-            'price' => 'nullable|max:15',
-            'sale_date' => 'nullable|max:25',
-            'description' => 'nullable'
-        ]);
-
-        $comic->update($val_data);
-
-
         return view('comics.edit', compact('comic'));
     }
 
@@ -88,6 +76,17 @@ class ComicsController extends Controller
     {
         // dd($request)->all();
         $comic->update($request->all());
+
+        $val_data = $request->validate([
+            'title' => 'required|min:3|max:255|',
+            'thumb' => 'required|max:255',
+            'series' => 'required|min:10|max:200',
+            'price' => 'nullable|max:15',
+            'sale_date' => 'nullable|max:25',
+            'description' => 'nullable'
+        ]);
+
+        $comic->update($val_data);
 
         return to_route('comics.show', $comic);
     }
