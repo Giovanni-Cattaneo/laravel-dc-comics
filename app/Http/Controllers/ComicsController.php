@@ -30,14 +30,16 @@ class ComicsController extends Controller
     {
         $product = $request->all();
 
-        $comic = new Comics();
-        $comic->title = $product['title'];
-        $comic->thumb = $product['thumb'];
-        $comic->series = $product['series'];
-        $comic->price = $product['price'];
-        $comic->sale_date = $product['sale_date'];
-        $comic->description = $product['description'];
-        $comic->save();
+        // $comic = new Comics();
+        // $comic->title = $product['title'];
+        // $comic->thumb = $product['thumb'];
+        // $comic->series = $product['series'];
+        // $comic->price = $product['price'];
+        // $comic->sale_date = $product['sale_date'];
+        // $comic->description = $product['description'];
+        // $comic->save();
+
+        Comics::create($product);
 
         return to_route('comics.index');
     }
@@ -72,8 +74,10 @@ class ComicsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Comics $comics)
+    public function destroy(Comics $comic)
     {
-        //
+        $comic->delete();
+
+        return to_route('comics.index');
     }
 }
