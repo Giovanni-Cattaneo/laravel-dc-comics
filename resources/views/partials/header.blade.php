@@ -4,10 +4,6 @@
         color: white;
     }
 
-    img {
-        height: 90px;
-    }
-
     .nav-link {
         font-size: 1.15rem;
         line-height: 6rem;
