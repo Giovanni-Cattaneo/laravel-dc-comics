@@ -61,9 +61,12 @@ class ComicsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Comics $comics)
+    public function update(Request $request, Comics $comic)
     {
-        //
+        // dd($request)->all();
+        $comic->update($request->all());
+
+        return to_route('comics.show', $comic);
     }
 
     /**
